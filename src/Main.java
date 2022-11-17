@@ -28,8 +28,8 @@ public class Main {
         for(Student s : studentArrayList) System.out.println(s.name +", "+ s.age);
 
         System.out.println("\nВсех у кого возраст больше 18 удалить:");
-        Iterator<Student> it = studentArrayList.iterator();
-        while (it.hasNext()) if (it.next().age>18) it.remove(); //Using Iterator to avoid ConcurrentModificationException if doing remove
+        //Using Iterator to avoid ConcurrentModificationException if doing remove
+        studentArrayList.removeIf(student -> student.age > 18);
         for(Student s : studentArrayList) System.out.println(s.name +", "+ s.age);
     }
 }
