@@ -38,7 +38,7 @@ public class Main {
         studentStream = studentArrayList.stream();
         studentStream.filter(student -> student.name.startsWith("А"))
                      .map(student -> new Student(student.name, student.age+=10))
-                     .sorted()
+                     .sorted((s1,s2)-> s1.compareTo(s2))
                      .forEach(System.out::println);
 
 
